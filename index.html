@@ -5,9 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hungry Monster</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <!-- Custom css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- header section start -->
+    <header class="container-fluid">
+        <!-- Nav Start -->
+        <nav class="container navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid d-flex justify-content-right">
+                <a class="navbar-brand " href="#">
+                    <img id="logo" style="width:146px;" src="images/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav hungry-navbar fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" >Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- nav end -->
+    </header>
+    <main class="content-area">
+        <!-- search bar -->
+        <div class="search-bar col-md-6 mx-auto">
+            <div class="search-box my-5">
+                <input id="search-field" type="text" class="form-control" placeholder="Search for meal..">
+                <button onclick="searchMeal()" class="btn btn-success search-btn">Search</button>
+            </div>
+        </div>
+        <div id="allFoodsDetails">
+
+        </div>
+    
+        <div class="container-fluid py-5">
+    
+            <div id="mealItems"></div>
+    
+            <p id="warning" class="text-center "> </p>
+            
+        </div>
+    </main>
+    <!-- Custom javaScript -->
     <script src="js/app.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
