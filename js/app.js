@@ -90,34 +90,3 @@ const getRecipeDetails = (id) => {
 
 }
 
-// Get Single Recipe Details
-const singlePreview = (recipes) => {
-
-    const singleContainer = document.getElementById('single-preview');
-
-    recipes.forEach(recipe => {
-        const { strMeal, strMealThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6 } = recipe
-
-        const singleHeader =
-            `<div class="col-md-6"> 
-                <img class="thumb" src="${strMealThumb}" alt="">
-            </div>
-
-            <div class="col-md-5 offset-md-1"> 
-                <h2 class="fw-bold mb-3">${strMeal}</h2>
-                <h5 class="fw-bold mb-4">Ingredients</h5>
-
-                <ul class="list-group">
-                    <li> <i class="fas fa-check-square"></i> ${strMeasure1} ${strIngredient1} </li>
-                    <li> <i class="fas fa-check-square"></i> ${strMeasure2} ${strIngredient2} </li>
-                    <li> <i class="fas fa-check-square"></i> ${strMeasure3} ${strIngredient3} </li>
-                    <li> <i class="fas fa-check-square"></i> ${strMeasure4} ${strIngredient4} </li>
-                    <li> <i class="fas fa-check-square"></i> ${strMeasure5} ${strIngredient5} </li>
-                    <li> <i class="fas fa-check-square"></i> ${strMeasure6} ${strIngredient6} </li>
-                </ul>
-            </div>`
-
-        singleContainer.innerHTML = singleHeader;
-    })
-
-}
