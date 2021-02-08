@@ -1,32 +1,32 @@
 //load api
 const searchHandler = () => {
-    const searchInput = document.getElementById('search-input')
-    const recipeContainer = document.getElementById('meal-container')
-    const getInputValue = searchInput.value
+    const searchItem = document.getElementById('search-input')
+    const mealContainer = document.getElementById('meal-container')
+    const getInputValue = searchItem.value
     const source = getInputValue
     let errorMessage = ""
 
     // Search Recipe by first letter
     if (getInputValue.length === 1 || getInputValue == "") {
-        const api = `https://www.themealdb.com/api/json/v1/1/search.php?f=${source}`;
-        fetch(api)
+        const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${source}`;
+        fetch(url)
             .then((response) => response.json())
             .then((data) => getRecipes(data.meals))
             .catch(() => {
                 const searchResult = document.getElementById('search-result')
                 errorMessage +=
                     `<div class="card-body bg-light text-dark">
-                <p class="card-title">Uh oh. We didn't find the search the recipes that you were looking for.</p>
+                <p class="card-title">Search result not found.</p>
             </div>`
                 searchResult.innerHTML = errorMessage
-                recipeContainer.innerHTML = ""
+                mealContainer.innerHTML = ""
             });
 
     }
 
     // Search Recipe by name
     if (getInputValue.length > 1) {
-        const api = `https://www.themealdb.com/api/json/v1/1/search.php?s=${source}`;
+        const api = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${source}`;
         fetch(api)
             .then((response) => response.json())
             .then((data) => getRecipes(data.meals))
@@ -34,10 +34,10 @@ const searchHandler = () => {
                 const searchResult = document.getElementById('search-result')
                 errorMessage +=
                     `<div class="card-body bg-light text-dark">
-                <p class="card-title">Uh oh. We didn't find the search the recipes that you were looking for.</p>
+                <p class="card-title">Search result not found.</p>
             </div>`
                 searchResult.innerHTML = errorMessage
-                recipeContainer.innerHTML = ""
+                mealContainer.innerHTML = ""
             });
     }
 }
@@ -46,7 +46,7 @@ const searchHandler = () => {
 // get all recipes by search
 const getRecipes = (recipes) => {
 
-    const recipeContainer = document.getElementById('recipe-container')
+    const mealContainer = document.getElementById('recipe-container')
     let recipeTemplate = ""
 
     recipes.forEach(recipe => {
@@ -60,7 +60,7 @@ const getRecipes = (recipes) => {
                 </div>
             </div></a>`
 
-        recipeContainer.innerHTML = recipeTemplate
+        mealContainer.innerHTML = recipeTemplate
     })
 
     // display total number of meal are found as shown 

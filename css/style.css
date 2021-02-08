@@ -51,3 +51,8 @@ img.thumb {
     object-fit: cover;
     border-radius: 10px;
   }
+  .card-body{
+      text-align: center;
+      font-size: 2em;
+      color: red;
+  }
